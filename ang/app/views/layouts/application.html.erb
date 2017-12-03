@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>Login & signup</title>
+    <center><img src="images/logo.png" alt="FreightClue" style="width:80px;height:80px;" /><br/>
+    </center>
+    <center>FREIGHT CLUE</center>
+    <script src="assets/app.js"></script>
+   
+    <script src="assets/angular-app/services/authentication.service.js"></script>
+    <script src="assets/angular-app/services/flash.service.js"></script>
+
+    <script src="assets/angular-app/services/user.service.js"></script>
+
+    <!-- Fake user service for demo that uses local storage -->
+     <script src="assets/angular-app/controllers/home.controller.js"></script>
+     <script src="assets/angular-app/controllers/login.controller.js"></script>
+    <script src="assets/angular-app/controllers/register.controller.js"></script>
+     <script src="assets/angular-app/controllers/register1.controller.js"></script>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+  <%= yield %>
+  </body>
+
+</html>

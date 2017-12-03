@@ -1,0 +1,62 @@
+﻿<div class="col-md-6 col-md-offset-3">
+    <h4>Logistics Details</h4>
+    <form name="myForm1" ng-submit="vm.register1()" role="form">
+       
+        
+
+        <div class="form-group" ng-class="{ 'has-error': myForm1.companyname.$dirty && myForm1.companyname.$error.required }">
+            <label for="companyname">Company Name</label>
+            <input type="text" name="companyname" id="companyname" class="form-control" ng-model="vm.company.companyname" placeholder="Enter Company Name" required />
+            <span style="color:red" ng-show="myForm1.companyname.$dirty && myForm1.companyname.$error.required" class="help-block">Company Name is required</span>
+            
+        </div>
+        
+
+        <div class="form-group" ng-class="{ 'has-error': myForm1.industry.$dirty && myForm1.industry.$error.required }">
+            <label for="industry">Industry</label>
+            <input type="text" name="industry" id="industry" class="form-control" ng-model="vm.company.industry" placeholder="Enter Industry Type" required />
+            <span style="color:red" ng-show="myForm1.industry.$dirty && myForm1.industry.$error.required" class="help-block">industry type is required</span>
+           
+        </div>
+
+
+
+        <div class="form-group" ng-class="{ 'has-error': myForm1.headOffice.$dirty && myForm1.headOffice.$error.required }">
+            <label for="headOffice">Head Office</label>
+            <input type="text" name="headOffice" id="headOffice" class="form-control" ng-model="vm.company.headOffice" placeholder="Enter Head Office Location" required />
+            <span style="color:red" ng-show="myForm1.headOffice.$dirty && myForm1.headOffice.$error.required" class="help-block">please enter head office city</span>
+           
+        </div>
+
+
+        <div class="form-group" ng-class="{ 'has-error': myForm1.country.$dirty && myForm1.country.$error.required }">
+            <label for="country">Country</label>
+            <input type="text" name="country" id="country" class="form-control" ng-model="vm.company.country" placeholder="Enter Country Name" required />
+            <span style="color:red"  ng-show="myForm1.country.$dirty && myForm1.country.$error.required" class="help-block">please enter head offcie country</span>
+           
+        </div>
+
+
+        <div class="form-group" ng-class="{ 'has-error': myForm1.shipmentCount.$dirty && myForm1.shipmentCount.$error.required }">
+            <label for="shipmentCount">Number of Shipments done <font size="small">(in last year)</font></label>
+            <input type="number" name="shipmentCount" id="shipmentCount" class="form-control" ng-model="vm.company.shipmentCount"  placeholder="Enter in Tonnes" required />
+            <span style="color:red" ng-show="myForm1.shipmentCount.$dirty && myForm1.shipmentCount.$error.required" class="help-block">Please enter no. of shipments</span>
+        </div> 
+
+
+        <div class="form-group" ng-class="{ 'has-error': myForm1.designation.$dirty && myForm1.designation.$error.required }">
+            <label for="designation">Your Designation</label>
+            <input type="text" name="designation" id="designation" class="form-control" ng-model="vm.company.designation" placeholder="Designation in Company" required />
+            <span style="color:red" ng-show="myForm1.designation.$dirty && myForm1.designation.$error.required" class="help-block">please enter your Post</span>
+           
+        </div>
+
+
+
+        <div class="form-actions">
+            <button type="submit" ng-disabled="myForm1.$invalid || vm.dataLoading" class="btn btn-primary">Submit</button>
+            
+            <a href="#login" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>

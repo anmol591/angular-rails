@@ -1,0 +1,52 @@
+﻿<div class="col-md-6 col-md-offset-3">
+    <h4>Personal Details</h4>
+    <form name="myForm" ng-submit="vm.register()" role="form">
+       
+        
+
+        <div class="form-group" ng-class="{ 'has-error': myForm.fullname.$dirty && myForm.fullname.$error.required }">
+            <label for="fullname">Full Name</label>
+            <input type="text" ng-minlength="2" name="fullname" id="fullname" class="form-control" ng-model="vm.user.fullname" placeholder="enter full name" required />
+            <span style="color:red" ng-show="myForm.fullname.$dirty && myForm.fullname.$error.required" class="help-block">Full Name is required</span>
+            <span style="color:red" ng-show=" myForm.fullname.$error.minlength" class="help-block">Please Enter full name</span>
+        </div>
+        
+
+        <div class="form-group" ng-class="{ 'has-error': myForm.emailId.$dirty && myForm.emailId.$error.required }">
+            <label for="emailId">Email Address</label>
+            <input type="text" name="emailId" id="emailId" class="form-control" ng-model="vm.user.emailId" placeholder="Ex - abc@xyz.com" ng-pattern = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/" required />
+            <span style="color:red" ng-show="myForm.emailId.$dirty && myForm.emailId.$error.required" class="help-block">Email Address is required</span>
+            <span style="color:red" ng-show="myForm.emailId.$error.pattern" class="help-block" >Please enter valid email address.</span>
+        </div>
+        
+        <div class="form-group" ng-class="{ 'has-error': myForm.password.$dirty && myForm.password.$error.required }">
+            <label for="password">Password</label>
+            <input type="password" ng-minlength="6" ng-maxlength="20" name="password" id="password" class="form-control" placeholder="Enter Password" ng-model="vm.user.password" required />
+            <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$error.required" class="help-block">Password is required</span>
+            <span style="color:red" ng-show="myForm.password.$error.minlength || myForm.password.$error.maxlength" class="help-block">Password Min 6 character</span>
+        </div>    
+
+
+        <div class="form-group" ng-class="{ 'has-error': myForm.cpassword.$dirty && myForm.cpassword.$error.required }">
+            <label for="cpassword">Confirm Password</label>
+            <input type="password" name="cpassword" id="cpassword" class="form-control" ng-model="vm.user.cpassword" placeholder="Re-enter Password" ng-pattern ="vm.user.password" required />
+            <span style="color:red" ng-show="myForm.cpassword.$dirty && myForm.cpassword.$error.required" class="help-block">Password is required</span>
+           <span style="color:red" ng-show="myForm.cpassword.$error.pattern" class="help-block"> Password not Matched </span> 
+        </div>  
+
+
+        <div class="form-group" ng-class="{ 'has-error': myForm.phonenumber.$dirty && myForm.phonenumber.$error.required }">
+            <label for="phonenumber">Phone Number</label>
+            <input type="number" name="phonenumber" id="phonenumber" class="form-control" ng-model="vm.user.phonenumber"  placeholder="Enter phone Number" ng-pattern="/\d{4,14}/" required />
+            <span style="color:red" ng-show="myForm.phonenumber.$dirty && myForm.phonenumber.$error.required" class="help-block">Please enter phone number</span>
+           <span style="color:red" ng-show="myForm.phonenumber.$error.pattern" class="help-block">phone number should in 4-14 digits</span>
+        </div> 
+
+
+        <div class="form-actions">
+            <button type="submit" value="" ng-disabled="myForm.$invalid || vm.dataLoading" class="btn btn-primary">Continue</button>
+            
+            <a href="#login" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>

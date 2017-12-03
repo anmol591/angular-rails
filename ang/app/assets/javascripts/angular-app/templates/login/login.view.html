@@ -1,0 +1,24 @@
+﻿<div class="col-md-6 col-md-offset-3">
+ <center><h4>Sign In</h4></center>
+    <form name="mySignIn" ng-submit="vm.login()" role="form" action="" >
+        
+        <div class="form-group" ng-class="{ 'has-error': mySignIn.emailId.$dirty && mySignIn.emailId.$error.required }">
+            <label for="emailId">User Email Id</label>
+            <input type="text" name="emailId" id="emailId" class="form-control" ng-model="vm.emailId" placeholder="Ex-abc@xyz.com"   ng-pattern = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/" required />
+            <span style="color:red" ng-show="mySignIn.emailId.$dirty && mySignIn.emailId.$error.required" class="help-block">Email Id is required</span>
+            <span style="color:red" ng-show="mySignIn.emailId.$error.pattern" class="help-block" >Please enter valid email address.</span>
+        </div>
+        
+        <div class="form-group" ng-class="{ 'has-error': mySignIn.password.$dirty && form.password.$error.required }">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model="vm.password" placeholder="Enter Password" required />
+            <span style="color:red" ng-show="mySignIn.password.$dirty && mySignIn.password.$error.required" class="help-block">Password is required</span>
+        </div>
+        
+        <div class="form-actions">
+            <button type="submit" ng-disabled="mySignIn.$invalid || vm.dataLoading" class="btn btn-primary">Login</button>
+            
+            <a href="#!/register" class="btn btn-link">Sign Up</a>
+        </div>
+    </form>
+</div>
