@@ -29,3 +29,5 @@ class SessionsController < ApplicationController
 	end
 		
 end
+
+#for the basic and real for the pace situation just for testing
